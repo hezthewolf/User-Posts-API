@@ -2,7 +2,6 @@ const usersUrl = "https://jsonplaceholder.typicode.com/users";
 const postsUrl = "https://jsonplaceholder.typicode.com/posts";
 
 const usersDisplay = document.querySelector("#userDataDisplay");
-const userIds = [];
 const modal = document.getElementById("myModal");
 const modalContent = document.getElementById("modalContent");
 const span = document.getElementsByClassName("close")[0];
@@ -19,7 +18,6 @@ const getUsers = async () => {
                         <button style="float: right; margin-right: 40px; background-color: azure; border: 1px solid black; width: 80px; border-radius: 10px; cursor: pointer"id = ${user.id} onclick="getPosts(this.id)">Posts</button>
                     </td>`;
           usersDisplay.insertAdjacentHTML("beforebegin", usersData);
-          userIds.push(user.id);
         });
       });
   } catch (error) {
